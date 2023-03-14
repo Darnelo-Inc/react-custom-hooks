@@ -6,10 +6,12 @@ function useHover(ref) {
     const on = () => setHover(true)
     const off = () => setHover(false)
 
-    const node = ref.current
+
 
     React.useEffect(() => {
         if (!ref.current) return;
+
+        const node = ref.current
 
         node.addEventListener("mouseenter", on)
         node.addEventListener("mousemove", on)
