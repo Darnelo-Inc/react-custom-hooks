@@ -1,10 +1,10 @@
 import React from "react"
-import Hover from "./components/Hover"
+import Posts from "./components/Posts"
 
 function App() {
   return (
     <div>
-      <Hover />
+      <Posts />
     </div>
   )
 }
