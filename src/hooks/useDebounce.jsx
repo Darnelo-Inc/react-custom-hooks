@@ -3,11 +3,11 @@ import { useRef, useCallback } from "react"
 function useDebounce(cb, delay) {
     const timeRef = useRef(0)
 
-    const debounce = useCallback((value) => {
+    const debounce = useCallback((...props) => {
         if (timeRef.current) clearTimeout(timeRef.current)
 
         timeRef.current = setTimeout(() => {
-            cb(value)
+            cb(...props)
         }, delay)
     }, [cb, delay])
 
