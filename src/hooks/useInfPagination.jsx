@@ -1,6 +1,6 @@
 import React from "react"
 
-function useInfPagination(cb, canLoad, ref) {
+function useInfPagination(cb, canLoad, ref, page) {
     const obsRef = React.useRef()
 
     React.useEffect(() => {
@@ -14,7 +14,7 @@ function useInfPagination(cb, canLoad, ref) {
         return () => {
             obsRef.current.unobserve(ref.current) // eslint-disable-line
         }
-    }, [cb]) // eslint-disable-line
+    }, [page]) // eslint-disable-line
 
     return
 }

@@ -5,7 +5,7 @@ function Posts() {
     const [posts, setPosts] = React.useState([])
 
     const [page, setPage] = React.useState(1)
-    const limit = 50
+    const limit = 20
 
     const fetching = (page, limit) => {
         fetch(`https://jsonplaceholder.typicode.com/posts?_limit=${limit}&_page=${page}`)
@@ -18,8 +18,7 @@ function Posts() {
 
     const ref = React.useRef()
 
-    useInfPagination(() => fetching(page, limit), page <= 100 / limit, ref)
-
+    useInfPagination(() => fetching(page, limit), page <= 100 / limit, ref, page)
 
     return (
         <>
